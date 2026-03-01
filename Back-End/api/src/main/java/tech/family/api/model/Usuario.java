@@ -5,7 +5,7 @@ public class Usuario {
     private int id;
     private String nome;
 
-    
+    //Precisa de um construtor vazio para o Jackson (serialização/deserialização JSON)
     public Usuario() {
     }
 

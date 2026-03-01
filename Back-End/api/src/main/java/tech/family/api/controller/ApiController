@@ -4,5 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 
+// Controlador REST para gerenciar as rotas da API relacionadas as classes do modelo (ex: Usuario, Familia, etc).
+
 public class ApiController {
 }
