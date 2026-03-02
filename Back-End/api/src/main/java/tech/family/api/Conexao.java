@@ -1,4 +1,4 @@
-package tech.family.api;
+/*package tech.family.api;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,8 +11,8 @@ public class Conexao {
     private static final String URL =
             "jdbc:mysql://localhost:3306/family?serverTimezone=UTC&useSSL=false";
 
-    private static final String USER = "";      // ajuste se necessário
-    private static final String PASSWORD = "";     // ajuste se necessário
+    private static final String USER = "root";      // ajuste se necessário
+    private static final String PASSWORD = "root";     // ajuste se necessário
 
     private Conexao() {
         // Evita instanciamento da classe (boa prática)
@@ -28,4 +28,5 @@ public class Conexao {
         }
     }
 }
+    */
     

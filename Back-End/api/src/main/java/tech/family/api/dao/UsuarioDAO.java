@@ -1,11 +1,11 @@
-package tech.family.api.dao;
+/*package tech.family.api.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import tech.family.api.model.Usuario;
-import tech.family.api.Conexao;
+
 
 // Classe responsável por interagir com o banco de dados para operações relacionadas a "Usuario"
 //Não apague pois vamos usala como base para outras DAOs (Data Access Object) no futuro
@@ -36,3 +36,4 @@ public class UsuarioDAO {
         }
     }
 }
+    */
