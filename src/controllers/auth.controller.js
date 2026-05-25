@@ -25,3 +25,16 @@ exports.login = async (req, res) => {
         message: "Login realizado"
     });
 };
+
+exports.register = async (req, res) => {
+
+    const { email, senha } = req.body;
+
+    console.log(email);
+    console.log(senha);
+
+    return res.json({
+        message: "Usuário cadastrado com sucesso"
+    });
+
+};

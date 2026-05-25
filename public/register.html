@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Cadastro</title>
+
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h1>Cadastrar</h1>
+
+        <form id="registerForm">
+
+            <div class="input-group">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu email"
+                    required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Senha</label>
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                    required>
+
+            </div>
+
+            <button
+                type="submit"
+                class="login-button">
+
+                Cadastrar
+
+            </button>
+
+        </form>
+
+        <div id="message" class="message"></div>
+
+        <a href="/" class="register-link">
+            Voltar para login
+        </a>
+
+    </div>
+
+    <script src="/js/register.js"></script>
+
+</body>
+
+</html>
