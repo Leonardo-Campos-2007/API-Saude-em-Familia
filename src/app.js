@@ -1,11 +1,22 @@
 const express = require("express");
-const routes = require("./routes");
-const errorHandler = require("./middlewares/errorHandler");
+
+const path = require("path");
 
 const app = express();
 
+const authRoutes = require("./routes/auth.routes");
+
+
 app.use(express.json());
-app.use("/api", routes);
-app.use(errorHandler);
+
+
+// SERVIR ARQUIVOS ESTÁTICOS
+app.use(express.static(path.join(__dirname, "../public")));
+
+
+app.use("/auth", authRoutes);
+
+
+
 
 module.exports = app;
