@@ -1,45 +1,48 @@
-const form = document.getElementById("loginForm");
+document.getElementById("loginForm")
+.addEventListener("submit", async (e) => {
 
-form.addEventListener("submit", async (event) => {
-
-    event.preventDefault();
+    e.preventDefault();
 
     const email = document.getElementById("email").value;
-
     const senha = document.getElementById("password").value;
+    const message = document.getElementById("message");
 
     try {
 
-        const response = await fetch("http://localhost:3000/auth/login", {
-
+        const response = await fetch("/validar", {
             method: "POST",
-
             headers: {
                 "Content-Type": "application/json"
             },
-
             body: JSON.stringify({
                 email,
                 senha
             })
-
         });
 
         const data = await response.json();
 
-        console.log(data);
+        if (response.ok) {
 
-        document.getElementById("message").innerHTML =
-            data.message;
+            console.log("Login OK");
+
+            message.textContent = data.message;
+
+            window.location.href = "/calendario.html";
+
+        } else {
+
+            message.textContent = data.message;
+
+        }
 
     } catch (error) {
 
         console.error(error);
 
-        document.getElementById("message").innerHTML =
-            "Erro ao conectar com servidor";
+        message.textContent =
+            "Erro ao conectar ao servidor";
 
     }
 
-    
 });

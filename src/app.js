@@ -1,29 +1,16 @@
 const express = require("express");
-
 const path = require("path");
+
+const usersRoutes = require("./routes/user");
 
 const app = express();
 
-const authRoutes = require("./routes/auth.routes");
-
-
 app.use(express.json());
 
+app.use(express.static(
+    path.resolve(__dirname, "../public")
+));
 
-// ARQUIVOS ESTÁTICOS
-app.use(express.static(path.resolve(__dirname, "../public")));
-
-
-// ROTAS
-app.use("/auth", authRoutes);
-
-
-// TESTE
-app.get("/teste", (req, res) => {
-
-    res.send("FUNCIONANDO");
-
-});
-
+app.use(usersRoutes);
 
 module.exports = app;
