@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/calendario.css">
+    <title>Calendário — Saúde em Família</title>
+
+</head>
+
+<body>
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">💊</div>
+            <div class="logo-text">
+                <strong>Saúde em Família</strong>
+                <span>Cuidado compartilhado</span>
+            </div>
+        </div>
+
+        <div class="patient-pill">
+            <div class="patient-avatar" id="patient-initials">—</div>
+            <div>
+                <p id="sidebar-patient-name">Paciente</p>
+                <small>Paciente</small>
+            </div>
+        </div>
+
+        <p class="nav-label">Geral</p>
+
+        <a href="#" class="nav-item" onclick="notifySection('Dashboard')">
+            <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="#" class="nav-item active">
+            <span class="nav-icon">📅</span> Calendário
+        </a>
+        <a href="#" class="nav-item" onclick="notifySection('Medicamentos')">
+            <span class="nav-icon">💊</span> Medicamentos
+            <span class="nav-badge" id="med-count">0</span>
+        </a>
+        <a href="#" class="nav-item" onclick="notifySection('Histórico')">
+            <span class="nav-icon">📋</span> Histórico
+        </a>
+
+        <p class="nav-label">Gerenciar</p>
+
+        <a href="#" class="nav-item" onclick="notifySection('Cuidadores')">
+            <span class="nav-icon">👥</span> Cuidadores
+        </a>
+        <a href="#" class="nav-item" onclick="notifySection('Paciente')">
+            <span class="nav-icon">🏥</span> Dados do Paciente
+        </a>
+        <a href="#" class="nav-item" onclick="notifySection('Alertas')">
+            <span class="nav-icon">🔔</span> Alertas
+        </a>
+
+        <div class="sidebar-footer">
+            <div class="user-row">
+                <div class="user-avatar" id="user-avatar">?</div>
+                <div>
+                    <div class="user-name" id="sidebar-user-name">Usuário</div>
+                    <div class="user-role">Cuidador</div>
+                </div>
+                <button class="btn-logout" onclick="logout()" title="Sair">🚪</button>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+                <div class="topbar-title">
+                    <h3>Calendário de Medicamentos</h3>
+                    <p id="topbar-date"></p>
+                </div>
+            </div>
+            <div class="topbar-actions">
+                <button class="btn-filled"  onclick="openAddModal()">+ Adicionar</button>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-card blue">
+                    <div class="stat-label">Hoje</div>
+                    <div class="stat-value" id="stat-hoje">0</div>
+                    <div class="stat-sub">doses programadas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Tomadas</div>
+                    <div class="stat-value" id="stat-tomadas">0</div>
+                    <div class="stat-sub">neste mês</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Perdidas</div>
+                    <div class="stat-value" id="stat-perdidas">0</div>
+                    <div class="stat-sub">neste mês</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Adesão</div>
+                    <div class="stat-value" id="stat-adesao">—</div>
+                    <div class="stat-sub">taxa do mês</div>
+                </div>
+            </div>
+
+            <div class="main-grid">
+
+                <!-- Calendário -->
+                <div class="card">
+
+                    <div class="cal-header">
+                        <span class="cal-month" id="cal-month-label"></span>
+                        <div class="cal-nav">
+                            <button onclick="prevMonth()">&#8249;</button>
+                            <button onclick="goToday()">Hoje</button>
+                            <button onclick="nextMonth()">&#8250;</button>
+                        </div>
+                    </div>
+
+                    <table class="cal-table">
+                        <thead>
+                            <tr>
+                                <th>Dom</th><th>Seg</th><th>Ter</th>
+                                <th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cal-body"></tbody>
+                    </table>
+
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background:#22c55e"></div> Tomada
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background:#f59e0b"></div> Pendente
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background:#ef4444"></div> Perdida
+                        </div>
+                    </div>
+
+                    <p class="history-label">Últimas administrações</p>
+                    <div id="history-list"></div>
+
+                </div>
+
+                <!-- Schedule -->
+                <div class="card">
+                    <p class="sched-title" id="sched-title">Programação do dia</p>
+                    <div id="sched-list"></div>
+                    <div class="empty-sched" id="empty-sched" style="display:none">
+                        <div style="font-size:2rem">💊</div>
+                        <p>Nenhum medicamento<br>programado para este dia.</p>
+                        <button class="btn-filled"
+                            style="margin-top:12px;font-size:0.8rem"
+                            onclick="openAddModal()">+ Adicionar</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Adicionar Medicamento -->
+    <div class="modal-overlay" id="add-modal">
+        <div class="modal">
+
+            <h3>💊 Adicionar Medicamento</h3>
+            <p class="modal-sub">Registre um novo medicamento no calendário.</p>
+
+            <div class="input-group">
+                <label>Nome do medicamento</label>
+                <input type="text" id="med-nome" placeholder="Ex: Captopril">
+            </div>
+
+            <div class="modal-row">
+                <div class="input-group">
+                    <label>Dosagem</label>
+                    <input type="text" id="med-dose" placeholder="Ex: 25mg">
+                </div>
+                <div class="input-group">
+                    <label>Via de administração</label>
+                    <select id="med-via">
+                        <option value="">Selecione...</option>
+                        <option>Oral</option>
+                        <option>Sublingual</option>
+                        <option>Injetável</option>
+                        <option>Tópica</option>
+                        <option>Inalatória</option>
+                        <option>Ocular</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-row">
+                <div class="input-group">
+                    <label>Frequência</label>
+                    <select id="med-freq">
+                        <option>1x ao dia</option>
+                        <option>2x ao dia</option>
+                        <option>3x ao dia</option>
+                        <option>A cada 8h</option>
+                        <option>A cada 12h</option>
+                        <option>Semanal</option>
+                        <option>Conforme necessário</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Horário principal</label>
+                    <input type="time" id="med-horario" value="08:00">
+                </div>
+            </div>
+
+            <div class="modal-row">
+                <div class="input-group">
+                    <label>Data de início</label>
+                    <input type="date" id="med-inicio">
+                </div>
+                <div class="input-group">
+                    <label>Data de término</label>
+                    <input type="date" id="med-fim">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Observações</label>
+                <textarea id="med-obs"
+                    placeholder="Ex: tomar com alimento, evitar exposição solar..."></textarea>
+            </div>
+
+            <p id="add-alert"
+               style="font-size:0.83rem;color:#dc2626;margin-top:4px;display:none"></p>
+
+            <div class="modal-footer">
+                <button class="btn-cancel" onclick="closeAddModal()">Cancelar</button>
+                <button class="btn-save"   onclick="saveMedication()">Salvar Medicamento</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="./js/calendario.js"></script>
+
+</body>
+</html>
