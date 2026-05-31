@@ -13,4 +13,6 @@ app.use(express.static(
 
 app.use(usersRoutes);
 
+app.use("/api", medicamentoRoutes);
+
 module.exports = app;
