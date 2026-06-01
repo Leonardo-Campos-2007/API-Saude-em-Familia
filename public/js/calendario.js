@@ -381,7 +381,7 @@ function toggleSidebar() {
 function logout() {
     localStorage.removeItem('sf_token');
     localStorage.removeItem('sf_user');
-    window.location.href = '/';
+    window.location.href = 'index.html';
 }
 
 function notifySection(s) {
