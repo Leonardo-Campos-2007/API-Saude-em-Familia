@@ -1,23 +1,23 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); 
 
-const path = rquire('path');
+const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const db = rquire('./db');
+const db = require('./db');
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(___dirname, 'public', 'index.html'));
 });
 
-const apiRouter = rquire('./routes/api');
-app.use(express.json());
-app.use('/api/users', apiRouter );
+const userRoutes = require('./src/routes/api.js'); // ajuste o caminho se necessário
+app.use('/', userRoutes);
 
 app.listen(port, () => {
     console.log(`Server funfionando em http://localhost:${port}`);
 })
-
 

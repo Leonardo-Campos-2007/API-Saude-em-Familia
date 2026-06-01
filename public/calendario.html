@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="topbar-actions">
-                <button class="btn-filled"  onclick="openAddModal()">+ Adicionar</button>
+                <button class="btn-filled" onclick="openAddModal()">+ Adicionar</button>
             </div>
         </header>
 
@@ -130,8 +130,13 @@
                     <table class="cal-table">
                         <thead>
                             <tr>
-                                <th>Dom</th><th>Seg</th><th>Ter</th>
-                                <th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
+                                <th>Dom</th>
+                                <th>Seg</th>
+                                <th>Ter</th>
+                                <th>Qua</th>
+                                <th>Qui</th>
+                                <th>Sex</th>
+                                <th>Sáb</th>
                             </tr>
                         </thead>
                         <tbody id="cal-body"></tbody>
@@ -161,9 +166,8 @@
                     <div class="empty-sched" id="empty-sched" style="display:none">
                         <div style="font-size:2rem">💊</div>
                         <p>Nenhum medicamento<br>programado para este dia.</p>
-                        <button class="btn-filled"
-                            style="margin-top:12px;font-size:0.8rem"
-                            onclick="openAddModal()">+ Adicionar</button>
+                        <button class="btn-filled" style="margin-top:12px;font-size:0.8rem" onclick="openAddModal()">+
+                            Adicionar</button>
                     </div>
                 </div>
 
@@ -176,78 +180,79 @@
 
     <!-- Adicionar Medicamento -->
     <div class="modal-overlay" id="add-modal">
+
         <div class="modal">
+            <form action="">
 
-            <h3>💊 Adicionar Medicamento</h3>
-            <p class="modal-sub">Registre um novo medicamento no calendário.</p>
+                <h3>💊 Adicionar Medicamento</h3>
+                <p class="modal-sub">Registre um novo medicamento no calendário.</p>
 
-            <div class="input-group">
-                <label>Nome do medicamento</label>
-                <input type="text" id="med-nome" placeholder="Ex: Captopril">
-            </div>
-
-            <div class="modal-row">
                 <div class="input-group">
-                    <label>Dosagem</label>
-                    <input type="text" id="med-dose" placeholder="Ex: 25mg">
+                    <label>Nome do medicamento</label>
+                    <input type="text" id="med-nome" placeholder="Ex: Captopril">
                 </div>
-                <div class="input-group">
-                    <label>Via de administração</label>
-                    <select id="med-via">
-                        <option value="">Selecione...</option>
-                        <option>Oral</option>
-                        <option>Sublingual</option>
-                        <option>Injetável</option>
-                        <option>Tópica</option>
-                        <option>Inalatória</option>
-                        <option>Ocular</option>
-                    </select>
-                </div>
-            </div>
 
-            <div class="modal-row">
-                <div class="input-group">
-                    <label>Frequência</label>
-                    <select id="med-freq">
-                        <option>1x ao dia</option>
-                        <option>2x ao dia</option>
-                        <option>3x ao dia</option>
-                        <option>A cada 8h</option>
-                        <option>A cada 12h</option>
-                        <option>Semanal</option>
-                        <option>Conforme necessário</option>
-                    </select>
+                <div class="modal-row">
+                    <div class="input-group">
+                        <label>Dosagem</label>
+                        <input type="text" id="med-dose" placeholder="Ex: 25mg">
+                    </div>
+                    <div class="input-group">
+                        <label>Via de administração</label>
+                        <select id="med-via">
+                            <option value="">Selecione...</option>
+                            <option>Oral</option>
+                            <option>Sublingual</option>
+                            <option>Injetável</option>
+                            <option>Tópica</option>
+                            <option>Inalatória</option>
+                            <option>Ocular</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label>Horário principal</label>
-                    <input type="time" id="med-horario" value="08:00">
+
+                <div class="modal-row">
+                    <div class="input-group">
+                        <label>Frequência</label>
+                        <select id="med-freq">
+                            <option>1x ao dia</option>
+                            <option>2x ao dia</option>
+                            <option>3x ao dia</option>
+                            <option>A cada 8h</option>
+                            <option>A cada 12h</option>
+                            <option>Semanal</option>
+                            <option>Conforme necessário</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Horário principal</label>
+                        <input type="time" id="med-horario" value="08:00">
+                    </div>
                 </div>
-            </div>
 
-            <div class="modal-row">
-                <div class="input-group">
-                    <label>Data de início</label>
-                    <input type="date" id="med-inicio">
+                <div class="modal-row">
+                    <div class="input-group">
+                        <label>Data de início</label>
+                        <input type="date" id="med-inicio">
+                    </div>
+                    <div class="input-group">
+                        <label>Data de término</label>
+                        <input type="date" id="med-fim">
+                    </div>
                 </div>
+
                 <div class="input-group">
-                    <label>Data de término</label>
-                    <input type="date" id="med-fim">
+                    <label>Observações</label>
+                    <textarea id="med-obs" placeholder="Ex: tomar com alimento, evitar exposição solar..."></textarea>
                 </div>
-            </div>
 
-            <div class="input-group">
-                <label>Observações</label>
-                <textarea id="med-obs"
-                    placeholder="Ex: tomar com alimento, evitar exposição solar..."></textarea>
-            </div>
+                <p id="add-alert" style="font-size:0.83rem;color:#dc2626;margin-top:4px;display:none"></p>
 
-            <p id="add-alert"
-               style="font-size:0.83rem;color:#dc2626;margin-top:4px;display:none"></p>
-
-            <div class="modal-footer">
-                <button class="btn-cancel" onclick="closeAddModal()">Cancelar</button>
-                <button class="btn-save"   onclick="saveMedication()">Salvar Medicamento</button>
-            </div>
+                <div class="modal-footer">
+                    <button class="btn-cancel" type="button" onclick="closeAddModal()">Cancelar</button>
+                    <button class="btn-save" type="button" onclick="saveMedication()">Salvar Medicamento</button>
+                </div>
+            </form>
 
         </div>
     </div>
@@ -256,4 +261,5 @@
     <script src="./js/calendario.js"></script>
 
 </body>
+
 </html>
