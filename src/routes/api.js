@@ -34,7 +34,7 @@ router.post('/cadastroUser', (req, res) => {
     const { nome, email, senha } = req.body;
 
     db.query(
-        'SELECT id FROM usuario WHERE nome = ? OR email = ?',
+        'SELECT id_usuario FROM usuario WHERE nome = ? OR email = ?',
         [nome, email],
         (err, rows) => {
             if (err) {

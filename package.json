@@ -2,11 +2,11 @@
   "name": "api-para-familia",
   "version": "1.0.0",
   "description": "Estrutura base de CRUD com Node.js e JavaScript",
-  "main": "src/server.js",
+  "main": "server.js",
   "type": "commonjs",
   "scripts": {
     "dev": "node --watch src/server.js",
-    "start": "node src/server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
