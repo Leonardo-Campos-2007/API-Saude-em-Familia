@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-06-03T15:07:50.518259" rpa="false" schemaversion="5">
+<suite id="s1" name="Cadastro Medicamento" source="C:\Users\admin\Videos\Teste de software\API-Saude-em-Familia\public\testes\cadastro_medicamento.robot">
+<test id="s1-t1" name="Cadastrar Medicamento Com Sucesso" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:51.644565" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/calendario.html'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-03T15:07:51.642800" elapsed="1.917493"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-03T15:07:53.561364" elapsed="0.047789"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:53.611055" level="INFO">Clicking button 'xpath=//button[contains(.,'+ Adicionar')]'.</msg>
+<arg>xpath=//button[contains(.,'+ Adicionar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T15:07:53.609975" elapsed="0.219767"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:53.831361" level="INFO">Typing text 'Paracetamol' into text field 'id=med-nome'.</msg>
+<arg>id=med-nome</arg>
+<arg>Paracetamol</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T15:07:53.830794" elapsed="0.199440"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:54.031416" level="INFO">Typing text '500mg' into text field 'id=med-dose'.</msg>
+<arg>id=med-dose</arg>
+<arg>500mg</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T15:07:54.030795" elapsed="0.107437"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:54.139493" level="INFO">Selecting options from selection list 'id=med-via' by label Oral.</msg>
+<arg>id=med-via</arg>
+<arg>Oral</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-06-03T15:07:54.138818" elapsed="0.245896"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:54.386619" level="INFO">Selecting options from selection list 'id=med-freq' by index 1.</msg>
+<arg>id=med-freq</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2026-06-03T15:07:54.385619" elapsed="0.135192"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:54.521698" level="INFO">Typing text '08:00' into text field 'id=med-horario'.</msg>
+<arg>id=med-horario</arg>
+<arg>08:00</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T15:07:54.521230" elapsed="0.137976"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:54.660474" level="INFO">Typing text '2026-06-03' into text field 'id=med-inicio'.</msg>
+<arg>id=med-inicio</arg>
+<arg>2026-06-03</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T15:07:54.659776" elapsed="0.137689"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:54.798685" level="INFO">Typing text '2026-06-10' into text field 'id=med-fim'.</msg>
+<arg>id=med-fim</arg>
+<arg>2026-06-10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T15:07:54.798233" elapsed="0.131406"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:54.930609" level="INFO">Typing text 'Após refeições' into text field 'id=med-obs'.</msg>
+<arg>id=med-obs</arg>
+<arg>Após refeições</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T15:07:54.930153" elapsed="0.118810"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:55.050017" level="INFO">Clicking button 'xpath=//button[contains(.,'Salvar Medicamento')]'.</msg>
+<arg>xpath=//button[contains(.,'Salvar Medicamento')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T15:07:55.049511" elapsed="0.116452"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-03T15:07:58.168132" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-03T15:07:55.166895" elapsed="3.001605"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-03T15:07:58.191795" level="INFO">Current page contains text 'Medicamento'.</msg>
+<arg>Medicamento</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-03T15:07:58.169290" elapsed="0.022619"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-03T15:07:58.192384" elapsed="2.351830"/>
+</kw>
+<status status="PASS" start="2026-06-03T15:07:51.641254" elapsed="8.905563"/>
+</test>
+<status status="PASS" start="2026-06-03T15:07:50.524834" elapsed="10.023933"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cadastro Medicamento" id="s1" pass="1" fail="0" skip="0">Cadastro Medicamento</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

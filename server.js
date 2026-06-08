@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const db = require('./db');
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(___dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 const userRoutes = require('./src/routes/api.js'); // ajuste o caminho se necessário

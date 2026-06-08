@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-06-03T14:22:42.902473" rpa="false" schemaversion="5">
+<suite id="s1" name="Validacao Nome Medicamento" source="C:\Users\admin\Videos\Teste de software\API-Saude-em-Familia\public\testes\validacao_nome_medicamento.robot">
+<test id="s1-t1" name="Validar Nome Obrigatorio" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-03T14:22:43.766172" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/calendario.html'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-03T14:22:43.765144" elapsed="2.963910"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-03T14:22:46.755637" elapsed="0.472325"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-03T14:22:47.233848" level="INFO">Clicking button 'xpath=//button[contains(.,'+ Adicionar')]'.</msg>
+<arg>xpath=//button[contains(.,'+ Adicionar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T14:22:47.232796" elapsed="0.501732"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-03T14:22:47.739349" level="INFO">Typing text '500mg' into text field 'id=med-dose'.</msg>
+<arg>id=med-dose</arg>
+<arg>500mg</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T14:22:47.738711" elapsed="0.218911"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-03T14:22:47.959371" level="INFO">Clicking button 'xpath=//button[contains(.,'Salvar Medicamento')]'.</msg>
+<arg>xpath=//button[contains(.,'Salvar Medicamento')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-03T14:22:47.958806" elapsed="0.226189"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-03T14:22:48.217197" level="INFO">Current page contains text 'Informe o nome do medicamento.'.</msg>
+<arg>Informe o nome do medicamento.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-03T14:22:48.185503" elapsed="0.031919"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-03T14:22:48.218040" elapsed="2.739328"/>
+</kw>
+<status status="PASS" start="2026-06-03T14:22:43.763359" elapsed="7.195395"/>
+</test>
+<status status="PASS" start="2026-06-03T14:22:42.905842" elapsed="8.056305"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Validacao Nome Medicamento" id="s1" pass="1" fail="0" skip="0">Validacao Nome Medicamento</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
