@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Layssa01*', //catolica
+    password: 'Ju250207!', //catolica
     database: 'familia', //nome do banco de dados
     port: '3306' //3307
 });
