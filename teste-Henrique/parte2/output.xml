@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-09T21:18:23.539424" rpa="false" schemaversion="5">
+<suite id="s1" name="Testes Interface Ct02" source="C:\Users\Cliente\OneDrive\Documentos\teste-de-software\parte_2_teste_interface_usuario\testes_interface_ct02.robot">
+<kw name="Abrir navegador na tela de login" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:23.778046" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8081'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-09T21:18:23.777810" elapsed="0.957965"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-09T21:18:24.736043" elapsed="0.025190"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:23.777239" elapsed="0.984199"/>
+</kw>
+<test id="s1-t1" name="CT02-01 - Deve realizar login com dados validos" line="19">
+<kw name="Acessar tela de login" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:24.762725" level="INFO">Opening url 'http://localhost:8081'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-09T21:18:24.762526" elapsed="0.229699"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:24.762198" elapsed="0.230146"/>
+</kw>
+<kw name="Dado que o usuario informa o email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:24.993325" level="INFO">Typing text 'admin@email.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:24.992838" elapsed="0.062116"/>
+</kw>
+<arg>admin@email.com</arg>
+<status status="PASS" start="2026-06-09T21:18:24.992537" elapsed="0.062526"/>
+</kw>
+<kw name="E informa a senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.055677" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-09T21:18:25.073060" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.055469" elapsed="0.040566"/>
+</kw>
+<arg>123456</arg>
+<status status="PASS" start="2026-06-09T21:18:25.055221" elapsed="0.040936"/>
+</kw>
+<kw name="Quando solicitar login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.096708" level="INFO">Clicking button 'id=btnEntrar'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.096509" elapsed="0.043333"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.096306" elapsed="0.043649"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.140347" elapsed="0.011516"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.152454" level="INFO">Verifying element 'id=mensagem' contains exact text 'Login realizado com sucesso'.</msg>
+<arg>${MENSAGEM}</arg>
+<arg>${texto_esperado}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.152116" elapsed="0.011997"/>
+</kw>
+<arg>Login realizado com sucesso</arg>
+<status status="PASS" start="2026-06-09T21:18:25.140117" elapsed="0.024100"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:24.761568" elapsed="0.402763"/>
+</test>
+<test id="s1-t2" name="CT02-02 - Deve validar campos obrigatorios" line="25">
+<kw name="Acessar tela de login" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.165398" level="INFO">Opening url 'http://localhost:8081'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.165201" elapsed="0.015976"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.164907" elapsed="0.016439"/>
+</kw>
+<kw name="Quando solicitar login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.182082" level="INFO">Clicking button 'id=btnEntrar'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.181854" elapsed="0.035263"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.181557" elapsed="0.035673"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.217631" elapsed="0.007509"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.225626" level="INFO">Verifying element 'id=mensagem' contains exact text 'Email e senha obrigatorios'.</msg>
+<arg>${MENSAGEM}</arg>
+<arg>${texto_esperado}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.225294" elapsed="0.007816"/>
+</kw>
+<arg>Email e senha obrigatorios</arg>
+<status status="PASS" start="2026-06-09T21:18:25.217383" elapsed="0.015838"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.164556" elapsed="0.068782"/>
+</test>
+<test id="s1-t3" name="CT02-03 - Deve validar email invalido" line="29">
+<kw name="Acessar tela de login" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.234191" level="INFO">Opening url 'http://localhost:8081'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.234076" elapsed="0.250873"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.233883" elapsed="0.251169"/>
+</kw>
+<kw name="Dado que o usuario informa o email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.485694" level="INFO">Typing text 'adminemail.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.485444" elapsed="0.040942"/>
+</kw>
+<arg>adminemail.com</arg>
+<status status="PASS" start="2026-06-09T21:18:25.485208" elapsed="0.041326"/>
+</kw>
+<kw name="E informa a senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.527184" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-09T21:18:25.542331" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.526976" elapsed="0.036641"/>
+</kw>
+<arg>123456</arg>
+<status status="PASS" start="2026-06-09T21:18:25.526719" elapsed="0.036998"/>
+</kw>
+<kw name="Quando solicitar login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.564253" level="INFO">Clicking button 'id=btnEntrar'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.564064" elapsed="0.035615"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.563860" elapsed="0.035924"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.600161" elapsed="0.006971"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.607571" level="INFO">Verifying element 'id=mensagem' contains exact text 'Email invalido'.</msg>
+<arg>${MENSAGEM}</arg>
+<arg>${texto_esperado}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.607265" elapsed="0.007851"/>
+</kw>
+<arg>Email invalido</arg>
+<status status="PASS" start="2026-06-09T21:18:25.599933" elapsed="0.015276"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.233595" elapsed="0.381712"/>
+</test>
+<test id="s1-t4" name="CT02-04 - Deve validar usuario inexistente" line="35">
+<kw name="Acessar tela de login" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.616180" level="INFO">Opening url 'http://localhost:8081'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.616004" elapsed="0.016767"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.615788" elapsed="0.017166"/>
+</kw>
+<kw name="Dado que o usuario informa o email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.633948" level="INFO">Typing text 'teste@email.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.633596" elapsed="0.039723"/>
+</kw>
+<arg>teste@email.com</arg>
+<status status="PASS" start="2026-06-09T21:18:25.633208" elapsed="0.040228"/>
+</kw>
+<kw name="E informa a senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.675585" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-09T21:18:25.691403" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.673850" elapsed="0.038003"/>
+</kw>
+<arg>123456</arg>
+<status status="PASS" start="2026-06-09T21:18:25.673597" elapsed="0.038423"/>
+</kw>
+<kw name="Quando solicitar login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.712704" level="INFO">Clicking button 'id=btnEntrar'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.712485" elapsed="0.033380"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.712247" elapsed="0.033733"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.746488" elapsed="0.008341"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.755209" level="INFO">Verifying element 'id=mensagem' contains exact text 'Usuario nao encontrado'.</msg>
+<arg>${MENSAGEM}</arg>
+<arg>${texto_esperado}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.754975" elapsed="0.007227"/>
+</kw>
+<arg>Usuario nao encontrado</arg>
+<status status="PASS" start="2026-06-09T21:18:25.746148" elapsed="0.016150"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.615495" elapsed="0.146914"/>
+</test>
+<test id="s1-t5" name="CT02-05 - Deve validar senha incorreta" line="41">
+<kw name="Acessar tela de login" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.763246" level="INFO">Opening url 'http://localhost:8081'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.763125" elapsed="0.170803"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.762930" elapsed="0.171107"/>
+</kw>
+<kw name="Dado que o usuario informa o email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.934728" level="INFO">Typing text 'admin@email.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.934444" elapsed="0.039107"/>
+</kw>
+<arg>admin@email.com</arg>
+<status status="PASS" start="2026-06-09T21:18:25.934196" elapsed="0.039480"/>
+</kw>
+<kw name="E informa a senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:25.974374" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-09T21:18:25.989600" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:25.974158" elapsed="0.036157"/>
+</kw>
+<arg>111111</arg>
+<status status="PASS" start="2026-06-09T21:18:25.973872" elapsed="0.036545"/>
+</kw>
+<kw name="Quando solicitar login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:26.011112" level="INFO">Clicking button 'id=btnEntrar'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T21:18:26.010839" elapsed="0.033823"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:26.010562" elapsed="0.034261"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-09T21:18:26.045270" elapsed="0.007325"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-09T21:18:26.053026" level="INFO">Verifying element 'id=mensagem' contains exact text 'Senha incorreta'.</msg>
+<arg>${MENSAGEM}</arg>
+<arg>${texto_esperado}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-09T21:18:26.052748" elapsed="0.007561"/>
+</kw>
+<arg>Senha incorreta</arg>
+<status status="PASS" start="2026-06-09T21:18:26.045033" elapsed="0.015369"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:25.762614" elapsed="0.297899"/>
+</test>
+<kw name="Fechar navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-09T21:18:26.061201" elapsed="2.147660"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:26.061049" elapsed="2.147928"/>
+</kw>
+<status status="PASS" start="2026-06-09T21:18:23.540819" elapsed="4.668195"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Testes Interface Ct02" id="s1" pass="5" fail="0" skip="0">Testes Interface Ct02</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
