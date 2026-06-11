@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-06-10T23:18:23.684795" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste Login" source="C:\Users\Boga\Desktop\API-Saude-em-Familia\scriptsTestes-Gustavo\teste_login\teste_login.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-06-10T23:18:24.172144" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-10T23:18:24.171797" elapsed="1.127441"/>
+</kw>
+<test id="s1-t1" name="CT01 — Email e senha válidos" line="15">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T23:18:25.301124" elapsed="0.033890"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:25.336406" level="INFO">Typing text 'chaodeterraefogo@gmail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${EMAIL_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T23:18:25.335705" elapsed="0.128865"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:25.465342" level="INFO">Typing text '1' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${SENHA_VALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T23:18:25.464932" elapsed="0.079508"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:25.545217" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T23:18:25.544855" elapsed="0.092080"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>calendario.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-10T23:18:25.637316" elapsed="1.697639"/>
+</kw>
+<doc>Login com credenciais válidas deve redirecionar para o calendário</doc>
+<status status="PASS" start="2026-06-10T23:18:25.299716" elapsed="2.035726"/>
+</test>
+<test id="s1-t2" name="CT02 — Email sem @" line="23">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:27.340019" level="INFO">Opening url 'http://localhost:3000/index.html'</msg>
+<arg>${URL_LOGIN}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-10T23:18:27.339624" elapsed="0.119885"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T23:18:27.463127" elapsed="0.025162"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:27.489333" level="INFO">Typing text 'usuarioemail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${EMAIL_SEM_ARROBA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T23:18:27.488740" elapsed="0.095456"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:27.586668" level="INFO">Typing text '1' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${SENHA_VALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T23:18:27.585970" elapsed="0.091692"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:27.678674" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T23:18:27.678138" elapsed="0.083803"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:27.777221" level="INFO">Element 'id=email' is displayed.</msg>
+<arg>id=email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T23:18:27.762369" elapsed="0.014979"/>
+</kw>
+<doc>Email sem @ deve exibir mensagem de erro do navegador</doc>
+<status status="PASS" start="2026-06-10T23:18:27.337756" elapsed="0.439969"/>
+</test>
+<test id="s1-t3" name="CT03 — Email vazio" line="32">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:27.779759" level="INFO">Opening url 'http://localhost:3000/index.html'</msg>
+<arg>${URL_LOGIN}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-10T23:18:27.779489" elapsed="0.033372"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T23:18:27.813260" elapsed="0.022608"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:27.837077" level="INFO">Typing text '1' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${SENHA_VALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T23:18:27.836494" elapsed="0.456644"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:28.295231" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T23:18:28.294723" elapsed="0.112822"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:28.426666" level="INFO">Element 'id=email' is displayed.</msg>
+<arg>id=email</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T23:18:28.407960" elapsed="0.018869"/>
+</kw>
+<doc>Email vazio deve exibir mensagem de campo obrigatório</doc>
+<status status="PASS" start="2026-06-10T23:18:27.778624" elapsed="0.648641"/>
+</test>
+<test id="s1-t4" name="CT04 — Senha vazia" line="40">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:28.429208" level="INFO">Opening url 'http://localhost:3000/index.html'</msg>
+<arg>${URL_LOGIN}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-10T23:18:28.428904" elapsed="0.034795"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T23:18:28.464705" elapsed="0.025415"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:28.491283" level="INFO">Typing text 'chaodeterraefogo@gmail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${EMAIL_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T23:18:28.490704" elapsed="0.101720"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:28.593202" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T23:18:28.592851" elapsed="0.078803"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-10T23:18:28.689106" level="INFO">Element 'id=password' is displayed.</msg>
+<arg>id=password</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T23:18:28.671980" elapsed="0.017286"/>
+</kw>
+<doc>Senha vazia deve exibir mensagem de campo obrigatório</doc>
+<status status="PASS" start="2026-06-10T23:18:28.428046" elapsed="0.261661"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-10T23:18:28.690855" elapsed="2.716284"/>
+</kw>
+<status status="PASS" start="2026-06-10T23:18:23.687819" elapsed="7.719432"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teste Login" id="s1" pass="4" fail="0" skip="0">Teste Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
