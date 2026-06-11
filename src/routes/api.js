@@ -8,7 +8,7 @@ router.post('/validarLogin', (req, res) => {
     db.query(
         'SELECT * FROM usuario WHERE email = ? AND senha = ?',
         [email, senha],
-        (err, result) => {
+        (err, result) => {""
             if (err) {
                 console.error(err);
                 return res.status(500).json({ error: 'Erro interno do servidor' });

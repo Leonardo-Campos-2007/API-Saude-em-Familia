@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.2 on win32)" generated="2026-06-07T23:01:45.015899" rpa="false" schemaversion="5">
+<suite id="s1" name="Cadastro" source="C:\Users\Super\Desktop\API-Para-Familia\Testes-Leonardo\Teste2\cadastro.robot">
+<kw name="Abrir Navegador" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-07T23:01:45.371275" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/cadastro.html'.</msg>
+<arg>${URL}</arg>
+<arg>${NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-07T23:01:45.371059" elapsed="1.149964"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-07T23:01:46.521352" elapsed="0.025905"/>
+</kw>
+<status status="PASS" start="2026-06-07T23:01:45.370411" elapsed="1.177120"/>
+</kw>
+<test id="s1-t1" name="CT01 - Cadastro aprovado com todos os campos preenchidos" line="39">
+<kw name="Acessar Página de Cadastro">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-07T23:01:46.551210" level="INFO">Opening url 'http://localhost:3000/cadastro.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-07T23:01:46.550875" elapsed="0.031913"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2026-06-07T23:01:56.885668" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-07T23:01:56.885990" level="FAIL">Element 'xpath=//input[@placeholder='Digite seu nome']' did not appear in 10 seconds.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2026-06-07T23:01:46.583071" elapsed="10.307232">Element 'xpath=//input[@placeholder='Digite seu nome']' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-06-07T23:01:46.550102" elapsed="10.340397">Element 'xpath=//input[@placeholder='Digite seu nome']' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Preencher Todos os Campos">
+<status status="NOT RUN" start="2026-06-07T23:01:56.890862" elapsed="0.000046"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${BOTAO_CADASTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-07T23:01:56.891149" elapsed="0.000039"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${BOTAO_CADASTRAR}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" start="2026-06-07T23:01:56.891417" elapsed="0.000032"/>
+</kw>
+<doc>Preenche todos os campos e verifica que o cadastro é aceito.</doc>
+<tag>cadastro</tag>
+<tag>CT01</tag>
+<tag>regressao</tag>
+<status status="FAIL" start="2026-06-07T23:01:46.547666" elapsed="10.344080">Element 'xpath=//input[@placeholder='Digite seu nome']' did not appear in 10 seconds.</status>
+</test>
+<test id="s1-t2" name="CT02 - Cadastro recusado com campos vazios" line="47">
+<kw name="Acessar Página de Cadastro">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-07T23:01:56.893288" level="INFO">Opening url 'http://localhost:3000/cadastro.html'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-07T23:01:56.893149" elapsed="0.032566"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2026-06-07T23:02:07.117979" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-07T23:02:07.118274" level="FAIL">Element 'xpath=//input[@placeholder='Digite seu nome']' did not appear in 10 seconds.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2026-06-07T23:01:56.925916" elapsed="10.193891">Element 'xpath=//input[@placeholder='Digite seu nome']' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-06-07T23:01:56.892887" elapsed="10.227216">Element 'xpath=//input[@placeholder='Digite seu nome']' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Deixar Campos Vazios">
+<status status="NOT RUN" start="2026-06-07T23:02:07.120581" elapsed="0.000067"/>
+</kw>
+<kw name="Element Should Be Disabled" owner="SeleniumLibrary">
+<arg>${BOTAO_CADASTRAR}</arg>
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<status status="NOT RUN" start="2026-06-07T23:02:07.121267" elapsed="0.000065"/>
+</kw>
+<doc>Deixa os campos vazios e verifica que o cadastro é recusado.</doc>
+<tag>cadastro</tag>
+<tag>CT02</tag>
+<tag>regressao</tag>
+<status status="FAIL" start="2026-06-07T23:01:56.892205" elapsed="10.229446">Element 'xpath=//input[@placeholder='Digite seu nome']' did not appear in 10 seconds.</status>
+</test>
+<kw name="Fechar Navegador" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-06-07T23:02:07.122615" elapsed="2.201950"/>
+</kw>
+<status status="PASS" start="2026-06-07T23:02:07.122421" elapsed="2.202408"/>
+</kw>
+<doc>Testes de cadastro — CT01 (campos preenchidos) e CT02 (campo vazio)</doc>
+<status status="FAIL" start="2026-06-07T23:01:45.017601" elapsed="24.307337"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0">cadastro</stat>
+<stat pass="0" fail="1" skip="0">CT01</stat>
+<stat pass="0" fail="1" skip="0">CT02</stat>
+<stat pass="0" fail="2" skip="0">regressao</stat>
+</tag>
+<suite>
+<stat name="Cadastro" id="s1" pass="0" fail="2" skip="0">Cadastro</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

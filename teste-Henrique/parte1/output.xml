@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-09T19:50:14.222853" rpa="false" schemaversion="5">
+<suite id="s1" name="Testes Interface" source="C:\Users\Cliente\OneDrive\Documentos\teste-de-software\servidor\testes_interface.robot">
+<kw name="Abrir navegador na pagina inicial" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-09T19:50:14.487421" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8080'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-09T19:50:14.487182" elapsed="4.290366"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-09T19:50:18.777969" elapsed="0.035854"/>
+</kw>
+<status status="PASS" start="2026-06-09T19:50:14.486136" elapsed="4.327955"/>
+</kw>
+<test id="s1-t1" name="CT01 - Deve exibir a pagina inicial com servidor funcionando" line="18">
+<kw name="Entao a pagina inicial deve apresentar o titulo">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-09T19:50:18.815891" level="INFO">Verifying element 'id=titulo' contains exact text 'Servidor de Teste'.</msg>
+<arg>${TITULO_HOME}</arg>
+<arg>${titulo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-09T19:50:18.815336" elapsed="0.025385"/>
+</kw>
+<arg>Servidor de Teste</arg>
+<status status="PASS" start="2026-06-09T19:50:18.814935" elapsed="0.025901"/>
+</kw>
+<kw name="E deve apresentar o status do servidor">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-09T19:50:18.841489" level="INFO">Verifying element 'id=status' contains exact text 'Servidor funcionando!'.</msg>
+<arg>${STATUS_SERVIDOR}</arg>
+<arg>${status}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-09T19:50:18.841264" elapsed="0.009813"/>
+</kw>
+<arg>Servidor funcionando!</arg>
+<status status="PASS" start="2026-06-09T19:50:18.840999" elapsed="0.010191"/>
+</kw>
+<status status="PASS" start="2026-06-09T19:50:18.814247" elapsed="0.037062"/>
+</test>
+<test id="s1-t2" name="CT02 - Deve navegar para usuarios e listar cadastrados" line="22">
+<kw name="Quando acessar a tela de usuarios">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-06-09T19:50:18.852216" level="INFO">Clicking link 'id=linkUsuarios'.</msg>
+<arg>${LINK_USUARIOS}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T19:50:18.851994" elapsed="0.182851"/>
+</kw>
+<status status="PASS" start="2026-06-09T19:50:18.851811" elapsed="0.183151"/>
+</kw>
+<kw name="Entao a tela de usuarios deve apresentar o titulo">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-09T19:50:19.035775" level="INFO">Verifying element 'id=tituloUsuarios' contains exact text 'Usuarios cadastrados'.</msg>
+<arg>${TITULO_USUARIOS}</arg>
+<arg>${titulo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-09T19:50:19.035519" elapsed="0.013134"/>
+</kw>
+<arg>Usuarios cadastrados</arg>
+<status status="PASS" start="2026-06-09T19:50:19.035239" elapsed="0.013529"/>
+</kw>
+<kw name="E deve listar o usuario">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-09T19:50:19.057763" level="INFO">Current page contains element 'xpath=//li[contains(@class, 'usuario') and normalize-space(.)='Henrique']'.</msg>
+<arg>xpath=//li[contains(@class, 'usuario') and normalize-space(.)='${nome}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-09T19:50:19.049670" elapsed="0.008182"/>
+</kw>
+<arg>Henrique</arg>
+<status status="PASS" start="2026-06-09T19:50:19.049144" elapsed="0.008788"/>
+</kw>
+<kw name="E deve listar o usuario">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-09T19:50:19.063993" level="INFO">Current page contains element 'xpath=//li[contains(@class, 'usuario') and normalize-space(.)='Joao']'.</msg>
+<arg>xpath=//li[contains(@class, 'usuario') and normalize-space(.)='${nome}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-09T19:50:19.058329" elapsed="0.005747"/>
+</kw>
+<arg>Joao</arg>
+<status status="PASS" start="2026-06-09T19:50:19.058094" elapsed="0.006062"/>
+</kw>
+<kw name="E deve apresentar o total de usuarios">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-09T19:50:19.064682" level="INFO">Verifying element 'id=totalUsuarios' contains exact text 'Total de usuarios: 2'.</msg>
+<arg>${TOTAL_USUARIOS}</arg>
+<arg>${total}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-09T19:50:19.064489" elapsed="0.010086"/>
+</kw>
+<arg>Total de usuarios: 2</arg>
+<status status="PASS" start="2026-06-09T19:50:19.064286" elapsed="0.010399"/>
+</kw>
+<status status="PASS" start="2026-06-09T19:50:18.851517" elapsed="0.223281"/>
+</test>
+<kw name="Fechar navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-09T19:50:19.075473" elapsed="2.123173"/>
+</kw>
+<status status="PASS" start="2026-06-09T19:50:19.075272" elapsed="2.123484"/>
+</kw>
+<status status="PASS" start="2026-06-09T19:50:14.224067" elapsed="6.974724"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Testes Interface" id="s1" pass="2" fail="0" skip="0">Testes Interface</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
