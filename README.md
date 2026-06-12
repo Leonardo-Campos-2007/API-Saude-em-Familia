@@ -1,8 +1,5 @@
 # Apresentação — Saúde em Família
 
-Este documento reúne, de forma resumida, os principais elementos do projeto **Saúde em Família**, seguindo o roteiro de apresentação definido pela equipe. Cada seção apresenta apenas o conteúdo selecionado como exemplo representativo.
-
----
 
 ## 🎯 Objetivo Geral
 
