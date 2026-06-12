@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on win32)" generated="2026-06-12T18:58:23.805132" rpa="false" schemaversion="5">
+<suite id="s1" name="Registro Sucesso" source="C:\Users\Usuário\API-Saude-em-Familia\testes_Juh\teste 1\registro_sucesso.robot">
+<test id="s1-t1" name="CT01 - Registro com dados válidos deve ser bem-sucedido" line="14">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-12T18:58:32.056322" level="INFO">Opening browser 'firefox' to base url 'http://localhost:3000/register.html'.</msg>
+<msg time="2026-06-12T19:01:06.732179" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2026-06-12T19:01:07.064078" level="FAIL">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=54772): Read timed out. (read timeout=120)</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2026-06-12T18:58:32.055804" elapsed="157.164660">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=54772): Read timed out. (read timeout=120)</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=nome</arg>
+<arg>Amanda</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-12T19:01:09.422410" elapsed="0.175035"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>amanda@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-12T19:01:09.600323" elapsed="0.000163"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<arg>id=senha</arg>
+<arg>senha123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-12T19:01:09.602014" elapsed="0.000154"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>css=.login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-12T19:01:09.602765" elapsed="0.000112"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-06-12T19:01:09.603318" elapsed="0.000102"/>
+</kw>
+<doc>Verifica que um usuário com dados válidos consegue se cadastrar</doc>
+<status status="FAIL" start="2026-06-12T18:58:32.053695" elapsed="157.600548">ReadTimeoutError: HTTPConnectionPool(host='localhost', port=54772): Read timed out. (read timeout=120)</status>
+</test>
+<doc>Teste de registro de usuário - Caso de Sucesso</doc>
+<status status="FAIL" start="2026-06-12T18:58:23.816511" elapsed="165.881058"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Registro Sucesso" id="s1" pass="0" fail="1" skip="0">Registro Sucesso</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

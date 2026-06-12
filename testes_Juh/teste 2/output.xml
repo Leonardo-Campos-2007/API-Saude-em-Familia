@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on win32)" generated="2026-06-12T18:37:13.400052" rpa="false" schemaversion="5">
+<suite id="s1" name="Registro Dados Invalidos" source="C:\Users\Usuário\API-Saude-em-Familia\testes_Juh\teste 2\registro_dados_invalidos.robot">
+<test id="s1-t1" name="CT02 - Registro com nome muito curto deve falhar" line="10">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-12T18:37:51.071857" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/register.html'.</msg>
+<msg time="2026-06-12T18:40:17.381412" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)</msg>
+<msg time="2026-06-12T18:41:26.319811" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2026-06-12T18:41:26.320259" level="FAIL">SessionNotCreatedException: Message: session not created: DevToolsActivePort file doesn't exist; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7005dfd95+15395]
+	chromedriver!GetHandleVerifier [0x7ff7005dfdf0+153f0]
+	chromedriver!(No symbol) [0x7ff7001178fd]
+	chromedriver!(No symbol) [0x7ff70015e4a6]
+	chromedriver!(No symbol) [0x7ff70015969a]
+	chromedriver!(No symbol) [0x7ff700153f99]
+	chromedriver!(No symbol) [0x7ff7001a7fd1]
+	chromedriver!(No symbol) [0x7ff7001a7836]
+	chromedriver!(No symbol) [0x7ff700163a58]
+	chromedriver!(No symbol) [0x7ff700164953]
+	chromedriver!GetHandleVerifier [0x7ff700ba5511+5dab11]
+	chromedriver!GetHandleVerifier [0x7ff700b9f8fb+5d4efb]
+	chromedriver!GetHandleVerifier [0x7ff700bc3205+5f8805]
+	chromedriver!GetHandleVerifier [0x7ff7005fcc6e+3226e]
+	chromedriver!GetHandleVerifier [0x7ff70060562c+3ac2c]
+	chromedriver!GetHandleVerifier [0x7ff7005e9984+1ef84]
+	chromedriver!GetHandleVerifier [0x7ff7005e9b14+1f114]
+	chromedriver!GetHandleVerifier [0x7ff7005cca77+2077]
+	KERNEL32!BaseThreadInitThunk [0x7ffd87357614+14]
+	ntdll!RtlUserThreadStart [0x7ffd88d626a1+21]
+</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2026-06-12T18:37:51.014164" elapsed="215.939594">SessionNotCreatedException: Message: session not created: DevToolsActivePort file doesn't exist; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7005dfd95+15395]
+	chromedriver!GetHandleVerifier [0x7ff7005dfdf0+153f0]
+	chromedriver!(No symbol) [0x7ff7001178fd]
+	chromedriver!(No symbol) [0x7ff70015e4a6]
+	chromedriver!(No symbol) [0x7ff70015969a]
+	chromedriver!(No symbol) [0x7ff700153f99]
+	chromedriver!(No symbol) [0x7ff7001a7fd1]
+	chromedriver!(No symbol) [0x7ff7001a7836]
+	chromedriver!(No symbol) [0x7ff700163a58]
+	chromedriver!(No symbol) [0x7ff700164953]
+	chromedriver!GetHandleVerifier [0x7ff700ba5511+5dab11]
+	chromedriver!GetHandleVerifier [0x7ff700b9f8fb+5d4efb]
+	chromedriver!GetHandleVerifier [0x7ff700bc3205+5f8805]
+	chromedriver!GetHandleVerifier [0x7ff7005fcc6e+3226e]
+	chromedriver!GetHandleVerifier [0x7ff70060562c+3ac2c]
+	chromedriver!GetHandleVerifier [0x7ff7005e9984+1ef84]
+	chromedriver!GetHandleVerifier [0x7ff7005e9b14+1f114]
+	chromedriver!GetHandleVerifier [0x7ff7005cca77+2077]
+	KERNEL32!BaseThreadInitThunk [0x7ffd87357614+14]
+	ntdll!RtlUserThreadStart [0x7ffd88d626a1+21]
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=nome</arg>
+<arg>a</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-12T18:41:26.956059" elapsed="0.000400"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>amandajr@a.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-12T18:41:26.957656" elapsed="0.000241"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<arg>id=senha</arg>
+<arg>123456</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-12T18:41:26.959260" elapsed="0.000244"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>css=.login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-12T18:41:26.960813" elapsed="0.000189"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>2s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="NOT RUN" start="2026-06-12T18:41:26.963025" elapsed="0.000616"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>Nome deve ter pelo menos 3 caracteres</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-06-12T18:41:26.965021" elapsed="0.000298"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-06-12T18:41:26.966760" elapsed="0.000292"/>
+</kw>
+<doc>Verifica que nome com menos de 3 caracteres não é aceito</doc>
+<status status="FAIL" start="2026-06-12T18:37:51.010517" elapsed="215.959658">SessionNotCreatedException: Message: session not created: DevToolsActivePort file doesn't exist; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7005dfd95+15395]
+	chromedriver!GetHandleVerifier [0x7ff7005dfdf0+153f0]
+	chromedriver!(No symbol) [0x7ff7001178fd]
+	chromedriver!(No symbol) [0x7ff70015e4a6]
+	chromedriver!(No symbol) [0x7ff70015969a]
+	chromedriver!(No symbol) [0x7ff700153f99]
+	chromedriver!(No symbol) [0x7ff7001a7fd1]
+	chromedriver!(No symbol) [0x7ff7001a7836]
+	chromedriver!(No symbol) [0x7ff700163a58]
+	chromedriver!(No symbol) [0x7ff700164953]
+	chromedriver!GetHandleVerifier [0x7ff700ba5511+5dab11]
+	chromedriver!GetHandleVerifier [0x7ff700b9f8fb+5d4efb]
+	chromedriver!GetHandleVerifier [0x7ff700bc3205+5f8805]
+	chromedriver!GetHandleVerifier [0x7ff7005fcc6e+3226e]
+	chromedriver!GetHandleVerifier [0x7ff70060562c+3ac2c]
+	chromedriver!GetHandleVerifier [0x7ff7005e9984+1ef84]
+	chromedriver!GetHandleVerifier [0x7ff7005e9b14+1f114]
+	chromedriver!GetHandleVerifier [0x7ff7005cca77+2077]
+	KERNEL32!BaseThreadInitThunk [0x7ffd87357614+14]
+	ntdll!RtlUserThreadStart [0x7ffd88d626a1+21]
+</status>
+</test>
+<doc>Teste de registro de usuário - Dados Inválidos</doc>
+<status status="FAIL" start="2026-06-12T18:37:13.751882" elapsed="253.224589"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Registro Dados Invalidos" id="s1" pass="0" fail="1" skip="0">Registro Dados Invalidos</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-06-12T18:40:17.381412" level="WARN">Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)</msg>
+</errors>
+</robot>

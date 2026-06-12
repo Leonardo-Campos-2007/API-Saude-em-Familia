@@ -13,7 +13,7 @@ CT02 - Registro com nome muito curto deve falhar
     # Abrir navegador e preencher com nome inválido
     Open Browser       ${URL}    ${BROWSER}
     Input Text         id=nome       a
-    Input Text         id=email      a@a.com
+    Input Text         id=email      amandajr@a.com
     Input Password     id=senha      123456
     
     # Tentar submeter
