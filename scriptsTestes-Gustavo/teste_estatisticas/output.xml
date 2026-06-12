@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-06-11T22:26:18.136870" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste Calendario" source="C:\Users\Boga\Desktop\API-Saude-em-Familia\scriptsTestes-Gustavo\teste_estatisticas\teste_calendario.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-06-11T22:26:18.762356" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-11T22:26:18.761842" elapsed="32.943551"/>
+</kw>
+<test id="s1-t1" name="CT01 — Usuário sem medicamentos cadastrados" line="14">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:51.709212" level="INFO">Opening url 'http://localhost:3000/calendario.html?id=1?id=999'</msg>
+<arg>${URL_CALENDARIO}?id=999</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T22:26:51.708730" elapsed="0.123389"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=stat-hoje</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-11T22:26:51.836893" elapsed="0.147924"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:51.985575" level="INFO">Verifying element 'id=stat-hoje' contains exact text '0'.</msg>
+<arg>id=stat-hoje</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-11T22:26:51.985207" elapsed="0.037039"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.023167" level="INFO">Verifying element 'id=stat-tomadas' contains exact text '0'.</msg>
+<arg>id=stat-tomadas</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.022676" elapsed="0.021775"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.045605" level="INFO">Verifying element 'id=stat-perdidas' contains exact text '0'.</msg>
+<arg>id=stat-perdidas</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.045012" elapsed="0.027286"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.073048" level="INFO">Verifying element 'id=stat-adesao' contains exact text '—'.</msg>
+<arg>id=stat-adesao</arg>
+<arg>—</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.072666" elapsed="0.022497"/>
+</kw>
+<doc>Cards devem exibir zeros para usuário sem medicamentos</doc>
+<status status="PASS" start="2026-06-11T22:26:51.707530" elapsed="0.388116"/>
+</test>
+<test id="s1-t2" name="CT02 — Usuário com medicamentos, sem doses hoje" line="23">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.097791" level="INFO">Opening url 'http://localhost:3000/calendario.html?id=1'</msg>
+<arg>${URL_CALENDARIO}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.097503" elapsed="0.036921"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=stat-hoje</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.134838" elapsed="0.014775"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.150746" level="INFO">Verifying element 'id=stat-hoje' contains exact text '0'.</msg>
+<arg>id=stat-hoje</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.150109" elapsed="0.019704"/>
+</kw>
+<doc>stat-hoje deve ser 0 quando não há doses programadas para hoje</doc>
+<status status="PASS" start="2026-06-11T22:26:52.096601" elapsed="0.073658"/>
+</test>
+<test id="s1-t3" name="CT03 — Doses programadas hoje, sem registros no mês" line="29">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.172239" level="INFO">Opening url 'http://localhost:3000/calendario.html?id=1'</msg>
+<arg>${URL_CALENDARIO}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.171877" elapsed="0.032312"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=stat-hoje</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.204669" elapsed="0.021012"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.244871" level="INFO">${hoje} = 0</msg>
+<var>${hoje}</var>
+<arg>id=stat-hoje</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.226260" elapsed="0.018675"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2026-06-11T22:26:52.246564" level="FAIL">'0 &gt; 0' should be true.</msg>
+<arg>${hoje} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2026-06-11T22:26:52.245464" elapsed="0.001398">'0 &gt; 0' should be true.</status>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>id=stat-tomadas</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-06-11T22:26:52.247602" elapsed="0.000114"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>id=stat-perdidas</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-06-11T22:26:52.248218" elapsed="0.000093"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>id=stat-adesao</arg>
+<arg>—</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-06-11T22:26:52.248884" elapsed="0.000108"/>
+</kw>
+<doc>stat-hoje maior que 0, tomadas e perdidas zerados</doc>
+<status status="FAIL" start="2026-06-11T22:26:52.171046" elapsed="0.078546">'0 &gt; 0' should be true.</status>
+</test>
+<test id="s1-t4" name="CT04 — Doses programadas e registradas no mês" line="39">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.252249" level="INFO">Opening url 'http://localhost:3000/calendario.html?id=1'</msg>
+<arg>${URL_CALENDARIO}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.251855" elapsed="0.031945"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=stat-tomadas</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.284161" elapsed="0.014408"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.314277" level="INFO">${tomadas} = 0</msg>
+<var>${tomadas}</var>
+<arg>id=stat-tomadas</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.298975" elapsed="0.015363"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2026-06-11T22:26:52.315245" level="FAIL">'0 &gt; 0' should be true.</msg>
+<arg>${tomadas} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2026-06-11T22:26:52.314669" elapsed="0.000710">'0 &gt; 0' should be true.</status>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${adesao}</var>
+<arg>id=stat-adesao</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-11T22:26:52.315677" elapsed="0.000051"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${adesao}</arg>
+<arg>%</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2026-06-11T22:26:52.316001" elapsed="0.000052"/>
+</kw>
+<doc>stat-tomadas maior que 0 e adesão exibe percentual</doc>
+<status status="FAIL" start="2026-06-11T22:26:52.250601" elapsed="0.065780">'0 &gt; 0' should be true.</status>
+</test>
+<test id="s1-t5" name="CT05 — Todas as doses do mês foram tomadas" line="48">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.317918" level="INFO">Opening url 'http://localhost:3000/calendario.html?id=1'</msg>
+<arg>${URL_CALENDARIO}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.317689" elapsed="0.062168"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=stat-adesao</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.380599" elapsed="0.018886"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.400502" level="INFO">Verifying element 'id=stat-perdidas' contains exact text '0'.</msg>
+<arg>id=stat-perdidas</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-11T22:26:52.399961" elapsed="0.019338"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-11T22:26:52.420239" level="INFO">Verifying element 'id=stat-adesao' contains exact text '100%'.</msg>
+<msg time="2026-06-11T22:26:53.285214" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-11T22:26:53.285466" level="FAIL">The text of element 'id=stat-adesao' should have been '100%' but it was '—'.</msg>
+<arg>id=stat-adesao</arg>
+<arg>100%</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2026-06-11T22:26:52.419718" elapsed="0.942477">The text of element 'id=stat-adesao' should have been '100%' but it was '—'.</status>
+</kw>
+<doc>stat-perdidas deve ser 0 e adesão deve ser 100%</doc>
+<status status="FAIL" start="2026-06-11T22:26:52.317009" elapsed="1.045616">The text of element 'id=stat-adesao' should have been '100%' but it was '—'.</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-11T22:26:53.363649" elapsed="2.593648"/>
+</kw>
+<status status="FAIL" start="2026-06-11T22:26:18.139614" elapsed="37.817811"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teste Calendario" id="s1" pass="2" fail="3" skip="0">Teste Calendario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
